@@ -5,20 +5,46 @@
 .error-container {
   display: flex;
   flex-direction: row;
+
+  &.panel-container {
+    border: none;
+  }
+
+  hr {
+    width: 100%;
+  }
 }
 
 .error-row {
   display: flex;
   flex-direction: row;
+  flex: 1;
 }
 
 .error-column {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .error-space-between {
   justify-content: space-between;
+}
+
+.error-justify-center {
+  justify-content: center;
+}
+
+.error-text {
+  margin: 4% 0;
+
+  > div:first-child {
+    margin-right: 20px;
+
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 .graph-box {
@@ -47,6 +73,10 @@
   justify-content: flex-end;
 }
 
+.error-full-width {
+  width: 100%;
+}
+
 //
 // Text
 //
@@ -59,6 +89,24 @@
 
 .error-link {
   color: $orange;
+}
+
+.error-button {
+  border: 1px solid $white;
+  color: $white;
+  background: none;
+  padding: 12px 23px;
+  text-transform: capitalize;
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    background: $orange;
+    border: 1px solid $orange;
+  }
 }
 
 .error-minus {
@@ -75,6 +123,14 @@
 
 .graph-text {
   margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.error-404 {
+  font-size: calc(115px + (230 - 115) * ((100vw - 320px) / (1600 - 320)));
 }
 
 @include media-breakpoint-down(sm) {
@@ -100,7 +156,13 @@
     width: 100%;
   }
 
-  .error-full-width {
-    width: 100%;
+  .error-text {
+    flex-direction: column;
+    align-items: center;
+
+    > div:first-child {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 }
